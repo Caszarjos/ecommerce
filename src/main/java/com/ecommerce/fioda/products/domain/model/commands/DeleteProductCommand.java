@@ -1,2 +1,6 @@
-package com.ecommerce.fioda.products.domain.model.commands;public class DeleteProductCommand {
+package com.ecommerce.fioda.products.domain.model.commands;
+
+public record DeleteProductCommand(
+        Long productId
+) {
 }

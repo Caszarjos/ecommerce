@@ -1,4 +1,4 @@
-package com.acme.learning.platform.shared.infrastructure.persistence.jpa;
+package com.ecommerce.fioda.shared.infrastructure.persistence.jpa;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;

@@ -1,2 +1,13 @@
-package com.ecommerce.fioda.products.interfaces.rest.resources;public record CreateProductResource() {
+package com.ecommerce.fioda.products.interfaces.rest.resources;
+
+import com.ecommerce.fioda.products.domain.model.entities.Category;
+
+public record CreateProductResource(
+        String name,
+        Double unit_price,
+        String description,
+        String color,
+        String brand,
+        String category
+) {
 }

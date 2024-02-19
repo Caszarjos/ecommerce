@@ -1,4 +1,4 @@
-package com.acme.learning.platform.shared.infrastructure.documentation.openapi.configuration;
+package com.ecommerce.fioda.shared.infrastructure.documentation.openapi.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.ExternalDocumentation;

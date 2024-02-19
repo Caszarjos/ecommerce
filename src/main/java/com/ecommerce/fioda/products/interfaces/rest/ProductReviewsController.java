@@ -1,8 +1,10 @@
-package com.ecommerce.fioda.products.interfaces.rest.transform;
+package com.ecommerce.fioda.products.interfaces.rest;
 
 import com.ecommerce.fioda.products.domain.model.entities.Review;
 import com.ecommerce.fioda.products.domain.model.queries.GetProductReviewsQuery;
 import com.ecommerce.fioda.products.domain.services.ReviewQueryService;
+import com.ecommerce.fioda.products.interfaces.rest.resources.ReviewResource;
+import com.ecommerce.fioda.products.interfaces.rest.transform.ReviewResourceFromEntityAssembler;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +28,16 @@ public class ProductReviewsController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Review>> getProductReviews(@PathVariable Long productId) {
+    public ResponseEntity<List<ReviewResource>> getProductReviews(@PathVariable Long productId) {
         var getProductReviewsQuery = new GetProductReviewsQuery(productId);
         List<Review> reviews = reviewQueryService.handle(getProductReviewsQuery);
 
-        var reviewsResource
+        var reviewResources = reviews
+                .stream()
+                .map(ReviewResourceFromEntityAssembler::toResourceFromEntity)
+                .toList();
+
+        return ResponseEntity.ok(reviewResources);
     }
 
 }

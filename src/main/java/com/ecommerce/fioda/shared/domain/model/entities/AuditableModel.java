@@ -1,4 +1,4 @@
-package com.acme.learning.platform.shared.domain.model.entities;
+package com.ecommerce.fioda.shared.domain.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -20,5 +20,4 @@ public class AuditableModel {
     @LastModifiedDate
     @Column(nullable = false)
     private Date updatedAt;
-
 }
