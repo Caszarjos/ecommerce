@@ -4,7 +4,6 @@ import com.ecommerce.fioda.products.domain.model.aggregates.Product;
 import com.ecommerce.fioda.shared.domain.model.entities.AuditableModel;
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Getter

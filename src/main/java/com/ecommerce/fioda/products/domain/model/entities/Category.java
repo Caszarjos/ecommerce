@@ -19,7 +19,6 @@ public class Category extends AuditableModel {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 25)
     @Getter
     private Categories name;
 

@@ -2,6 +2,7 @@ package com.ecommerce.fioda.products.domain.model.aggregates;
 
 import com.ecommerce.fioda.products.domain.model.entities.Category;
 import com.ecommerce.fioda.products.domain.model.entities.Discount;
+import com.ecommerce.fioda.products.domain.model.entities.Inventory;
 import com.ecommerce.fioda.products.domain.model.entities.Review;
 import com.ecommerce.fioda.products.domain.model.valueobjects.SKU;
 import jakarta.persistence.*;
@@ -58,6 +59,9 @@ public class Product extends AbstractAggregateRoot<Product> {
 
     @ManyToMany(mappedBy = "products")
     private List<Discount> discounts;
+
+    @OneToOne(mappedBy = "product")
+    private Inventory inventory;
 
     public Product() {
         this.reviews = new ArrayList<>();

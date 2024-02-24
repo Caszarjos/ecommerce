@@ -16,13 +16,17 @@ public class Inventory extends AuditableModel {
     private Long id;
 
     private Long stock;
+    private Long inventory;
+    private String location;
 
     @OneToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
 
-    public Inventory(Product product, Long stock) {
-        this.product = product;
+    public Inventory(Long stock, Long inventory, String location, Product product) {
         this.stock = stock;
+        this.inventory = inventory;
+        this.location = location;
+        this.product = product;
     }
 }
